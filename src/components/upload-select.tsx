@@ -30,6 +30,9 @@ export function UploadSelect({
           <SelectItem value="png">PNG</SelectItem>
           <SelectItem value="gif">GIF</SelectItem>
           <SelectItem value="webp">WEBP</SelectItem>
+          <SelectItem value="avi">AVİ</SelectItem>
+          <SelectItem value="mpeg">MPEG</SelectItem>
+          <SelectItem value="wav">WAV</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

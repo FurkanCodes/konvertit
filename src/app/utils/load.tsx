@@ -8,6 +8,7 @@ export const initializeFFmpegInstance = async (logs = false) => {
   ffmpeg.on("log", ({ message }) => {
     console.log(message);
   });
+
   await ffmpeg.load({
     coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
     wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),

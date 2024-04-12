@@ -13,6 +13,7 @@ import { initializeFFmpegInstance } from "@/app/utils/load";
 import { fetchFile } from "@ffmpeg/util";
 import { Progress } from "./ui/progress";
 import { Loader } from "lucide-react";
+import RemoveExtension from "@/app/utils/remove-extension";
 function UploadCard() {
   const [ffmpeg, setFfmpeg] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -52,16 +53,22 @@ function UploadCard() {
     setLoading(true);
 
     await ffmpeg.writeFile(
-      "input.jpeg",
+      RemoveExtension(selectedFile),
       await fetchFile(URL.createObjectURL(selectedFile))
     );
-    await ffmpeg.exec(["-i", "input.jpeg", `output.${selectedConversionType}`]);
+    await ffmpeg.exec([
+      "-i",
+      RemoveExtension(selectedFile),
+      `output.${selectedConversionType}`,
+    ]);
     const data = await ffmpeg.readFile(`output.${selectedConversionType}`);
     const blob = new Blob([data.buffer], {
       type: `image/${selectedConversionType}`,
     });
     const url = URL.createObjectURL(blob);
-
+    ffmpeg.on("progress", ({ progress, time }: any) => {
+      console.log(`${progress * 100} % (transcoded time: ${time / 1000000} s)`);
+    });
     // Create a hidden anchor element and click it to download the file
     const link = document.createElement("a");
     link.href = url;
