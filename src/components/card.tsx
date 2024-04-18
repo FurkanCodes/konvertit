@@ -49,8 +49,10 @@ function UploadCard() {
     return () => clearInterval(progressInterval); // Cleanup on unmount
   }, [loading]);
   const transcode = async () => {
+    debugger;
     if (!selectedFile || !selectedConversionType) return;
     setLoading(true);
+const inputType = selectedFile.type.split("/")
 
     await ffmpeg.writeFile(
       RemoveExtension(selectedFile),
@@ -63,7 +65,7 @@ function UploadCard() {
     ]);
     const data = await ffmpeg.readFile(`output.${selectedConversionType}`);
     const blob = new Blob([data.buffer], {
-      type: `image/${selectedConversionType}`,
+      type: `${inputType[0]}/${selectedConversionType}`,
     });
     const url = URL.createObjectURL(blob);
     ffmpeg.on("progress", ({ progress, time }: any) => {
