@@ -1,7 +1,7 @@
 
 # Uncomment the following to deploy this app as a static site on render
 - type: web
-   name: nextjs-static
+   name: konvertit
    runtime: static
     buildCommand: yarn; yarn build
    staticPublishPath: out
