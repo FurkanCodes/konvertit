@@ -33,6 +33,7 @@ export function UploadSelect({
           <SelectItem value="avi">AVİ</SelectItem>
           <SelectItem value="mpeg">MPEG</SelectItem>
           <SelectItem value="wav">WAV</SelectItem>
+              <SelectItem value="mp3">MP3</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
