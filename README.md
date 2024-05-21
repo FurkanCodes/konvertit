@@ -8,12 +8,22 @@ It is a simple conversion platform that uses FFMPEG and WASM to utilize computer
 WARNING:
 The performance is dependent on your computers' power.
 There might be some bugs while converting.
-
+## BUGS
+- The loading bar does not reflect the actual progress, it is because FFMPEG library does not provide loading state currently.
+- Sometimes, image conversion fails.
 
 ## TODO
-Make it completely Typesafe(as of now, the logic is not typesafe)
-Convert trancoding logic into its own Hook,
-add mobile responsiveness
+- Make it completely Typesafe(as of now, the logic is not typesafe)
+- Convert trancoding logic into its own Hook,
+- Add mobile responsiveness
+
+
+## Features
+
+- Light/dark mode toggle
+- Video and image conversion
+
+
 
 ## Getting Started
 
