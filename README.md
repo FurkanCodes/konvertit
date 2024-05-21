@@ -11,8 +11,9 @@ There might be some bugs while converting.
 
 
 ## TODO
-Make it completely Typesafe,
-Convert trancoding logic into its own Hook
+Make it completely Typesafe(as of now, the logic is not typesafe)
+Convert trancoding logic into its own Hook,
+add mobile responsiveness
 
 ## Getting Started
 
