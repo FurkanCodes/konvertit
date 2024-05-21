@@ -9,6 +9,11 @@ WARNING:
 The performance is dependent on your computers' power.
 There might be some bugs while converting.
 
+
+## TODO
+Make it completely Typesafe,
+Convert trancoding logic into its own Hook
+
 ## Getting Started
 
 First, run the development server:
